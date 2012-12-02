@@ -4,7 +4,7 @@
 namespace Application\Jobeet2Bundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\EntityToIdTransformer;
 use Symfony\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Application\Jobeet2Bundle\Form\CategoryType;
@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityManager;
 
 class JobType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
        $builder->add('category','entity',array('class' => 'Application\Jobeet2Bundle\Entity\Category'));
        /*$builder->add(
